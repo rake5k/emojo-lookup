@@ -1,27 +1,66 @@
 'use strict'
 
-const { test } = require('tap')
-const { build } = require('../helper')
+const {test, todo} = require('tap');
 
-test('default root route', async (t) => {
+const {build} = require('../helper');
+const { Instance } = require('../mocks/repositories/emojos');
+
+test('should render initially', async t => {
   const app = await build(t)
 
   const res = await app.inject({
-    url: '/'
-  })
-  t.same(JSON.parse(res.payload), { root: true })
+    url: '/',
+  });
+
+  t.equal(res.statusCode, 200);
+  t.ok(res.payload.includes('<h1>Emojo Lookup</h1>'));
+  t.notOk(res.payload.includes('<hr/>'));
 })
 
-// inject callback style:
-//
-// test('default root route', (t) => {
-//   t.plan(2)
-//   const app = await build(t)
-//
-//   app.inject({
-//     url: '/'
-//   }, (err, res) => {
-//     t.error(err)
-//     t.same(JSON.parse(res.payload), { root: true })
-//   })
-// })
+test('should render successful lookup with results', async t => {
+  const app = await build(t)
+
+  const res = await app.inject({
+    url: '/',
+    query: {
+      i: Instance.Empty,
+    },
+  });
+
+  t.equal(res.statusCode, 200);
+  t.ok(res.payload.includes('<h1>Emojo Lookup</h1>'));
+  t.ok(res.payload.includes('<hr/>'));
+  t.ok(res.payload.includes('<h2>Bonkers!</h2>'));
+});
+
+test('should render successful lookup without results', async t => {
+  const app = await build(t)
+
+  const res = await app.inject({
+    url: '/',
+    query: {
+      i: Instance.Good,
+    },
+  });
+
+  t.equal(res.statusCode, 200);
+  t.ok(res.payload.includes('<h1>Emojo Lookup</h1>'));
+  t.ok(res.payload.includes('<hr/>'));
+  t.ok(res.payload.includes('<h2>Emojos everywhere!</h2>'));
+});
+
+test('should render failed lookup', async t => {
+  const app = await build(t)
+
+  const res = await app.inject({
+    url: '/',
+    query: {
+      i: Instance.Fail,
+    },
+  });
+
+  t.equal(res.statusCode, 200);
+  t.ok(res.payload.includes('<h1>Emojo Lookup</h1>'));
+  t.ok(res.payload.includes('<hr/>'));
+  t.ok(res.payload.includes('<h2>Oh snap!</h2>'));
+});

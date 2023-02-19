@@ -5,6 +5,10 @@ input#search {
   padding-left: 40px;
 }
 
+div.container {
+  margin: 2.0rem auto;
+}
+
 div.result-item {
   line-height: 2;
 }

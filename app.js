@@ -5,7 +5,7 @@ const AutoLoad = require('@fastify/autoload')
 const Static = require('@fastify/static');
 const View = require("@fastify/view");
 
-module.exports = async function (fastify, opts) {
+async function app(fastify, opts) {
   // Place here your custom code!
 
   // Do not touch the following lines
@@ -48,3 +48,5 @@ module.exports = async function (fastify, opts) {
     },
   });
 }
+
+module.exports = app;

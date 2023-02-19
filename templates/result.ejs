@@ -1,0 +1,26 @@
+<%- include('layout/header'); -%>
+<%- include('partials/lookup'); -%>
+
+<% if (emojos.length) { %>
+    <hr/>
+    <h2>Emojos everywhere!</h2>
+    <div class="row row-responsive">
+        <div class="column column-sm-100 column-md-50 column-offset-md-25">
+            <input type="text" id="search" onkeyup="search()" placeholder="Filter emojos..">
+        </div>
+    </div>
+    <div class="row row-responsive">
+        <% emojos.forEach(emojo => { %>
+            <div class="column column-xs-100 column-sm-50 column-md-33 column-lg-25 result-item searchable">
+                <img src="<%= emojo.static_url %>" alt="<%= emojo.shortcode %>" class="emojo"/>
+                <span class="emojo">:<%= emojo.shortcode %>:</span>
+            </div>
+        <% }); %>
+    </div>
+<% } else if (!emojos.length) { %>
+    <hr/>
+    <h2>Bonkers!</h2>
+    <p>There are no custom emojos available on <code><%= instance %></code>.</p>
+<% } %>
+
+<%- include('layout/footer'); -%>
