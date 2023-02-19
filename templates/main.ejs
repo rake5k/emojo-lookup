@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Emojo Lookup</title>
+    <link rel="stylesheet" href="/css/normalize/normalize.css">
+    <link rel="stylesheet" href="/css/milligram/milligram.css">
+    <link rel="stylesheet" href="/css/responsive-grid.css">
+    <link rel="stylesheet" href="/css/custom.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Emojo Lookup</h1>
+
+    <form method="GET" action="">
+        <fieldset>
+            <label for="instance">Get your emojos from:</label>
+            <input type="text" name="i" id="instance"/>
+            <input type="submit" value="Fetch!"/>
+        </fieldset>
+    </form>
+
+    <% if (emojos && emojos.length) { %>
+        <hr/>
+        <div class="row row-responsive">
+            <div class="column column-sm-100 column-md-50 column-offset-md-25">
+                <input type="text" id="search" onkeyup="search()" placeholder="Filter emojos..">
+            </div>
+        </div>
+        <div class="row row-responsive">
+            <% emojos.forEach(emojo => { %>
+                <div class="column column-xs-100 column-sm-50 column-md-33 column-lg-25 result-item searchable">
+                    <img src="<%= emojo.static_url %>" alt="<%= emojo.shortcode %>" class="emojo"/>
+                    <span class="emojo">:<%= emojo.shortcode %>:</span>
+                </div>
+            <% }); %>
+        </div>
+    <% } %>
+</div>
+
+<script src="/js/search.js"></script>
+
+</body>
+</html>

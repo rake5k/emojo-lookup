@@ -1,0 +1,20 @@
+input#search {
+  background-image: url('/img/searchicon.png');
+  background-position: 10px 8px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
+
+div.result-item {
+  line-height: 2;
+}
+
+img.emojo {
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+}
+
+span.emojo {
+  vertical-align: middle;
+}
