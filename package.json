@@ -7,9 +7,10 @@
     "test": "test"
   },
   "scripts": {
-    "test": "tap \"test/**/*.test.js\"",
+    "dev": "fastify start -w -l info -P app.js",
+    "format": "prettier --write .",
     "start": "fastify start -l info app.js",
-    "dev": "fastify start -w -l info -P app.js"
+    "test": "tap \"test/**/*.test.js\""
   },
   "keywords": [],
   "author": "",
@@ -28,9 +29,22 @@
   },
   "devDependencies": {
     "fetch-mock": "npm:@gr2m/fetch-mock@9.11.0-pull-request-644.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "prettier": "^2.8.4",
     "tap": "^16.3.4"
   },
   "tap": {
     "check-coverage": false
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./**/*.{js,json,css,md}": [
+      "prettier --write"
+    ]
   }
 }

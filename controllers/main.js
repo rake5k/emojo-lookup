@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 module.exports.getMain = (repo) => async (request, reply) => {
   let instance = request.query.i;
@@ -13,4 +13,4 @@ module.exports.getMain = (repo) => async (request, reply) => {
   } catch (error) {
     return reply.view('/templates/fail.ejs', { instance });
   }
-}
+};

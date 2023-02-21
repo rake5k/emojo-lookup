@@ -1,12 +1,12 @@
-'use strict'
+'use strict';
 
 const Instance = {
   Fail: 'failtodon.org',
   Empty: 'emptydon.org',
   Good: 'anydon.org',
-}
+};
 
-const fetchEmojos = instance => {
+const fetchEmojos = (instance) => {
   if (!instance) {
     return null;
   }
@@ -19,10 +19,12 @@ const fetchEmojos = instance => {
     return Promise.reject();
   }
 
-  return Promise.resolve([{
-    static_url: 'https://mymastodon.com/nyancat.png',
-    shortcode: 'nyancat',
-  }]);
+  return Promise.resolve([
+    {
+      static_url: 'https://mymastodon.com/nyancat.png',
+      shortcode: 'nyancat',
+    },
+  ]);
 };
 
 module.exports = {

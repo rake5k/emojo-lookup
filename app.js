@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-const path = require('path')
-const AutoLoad = require('@fastify/autoload')
+const path = require('path');
+const AutoLoad = require('@fastify/autoload');
 const Static = require('@fastify/static');
-const View = require("@fastify/view");
+const View = require('@fastify/view');
 
 async function app(fastify, opts) {
   // Place here your custom code!
@@ -26,25 +26,25 @@ async function app(fastify, opts) {
   });
 
   fastify.register(Static, {
-    root: path.join(__dirname, 'public')
-  })
+    root: path.join(__dirname, 'public'),
+  });
 
   fastify.register(Static, {
     root: path.join(__dirname, 'node_modules/normalize.css'),
     prefix: '/css/normalize/',
-    decorateReply: false
+    decorateReply: false,
   });
 
   fastify.register(Static, {
     root: path.join(__dirname, 'node_modules/milligram/dist'),
     prefix: '/css/milligram/',
-    decorateReply: false
+    decorateReply: false,
   });
 
   // EJS templating engine
   fastify.register(View, {
     engine: {
-      ejs: require("ejs"),
+      ejs: require('ejs'),
     },
   });
 }

@@ -1,7 +1,7 @@
-'use strict'
+'use strict';
 
 function getJson(url) {
-  return fetch(url).then(response => {
+  return fetch(url).then((response) => {
     if (!response.ok) {
       throw new Error('Network response was not OK');
     }
@@ -10,5 +10,5 @@ function getJson(url) {
 }
 
 module.exports = {
-  getJson
+  getJson,
 };
