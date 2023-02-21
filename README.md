@@ -1,24 +1,26 @@
-# Getting Started with [Fastify-CLI](https://www.npmjs.com/package/fastify-cli)
+# Emojo Lookup
 
-This project was bootstrapped with Fastify-CLI.
+[![Continuous Integration][ci-badge]][ci]
+[![Release][release-badge]][release]
 
-## Available Scripts
+Lookup and preview custom emojis on any [Mastodon][mastodon] instance.
 
-In the project directory, you can run:
+## Developing
 
 ### `npm run dev`
 
-To start the app in dev mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Runs the app in development mode on [http://localhost:3000](http://localhost:3000).
 
 ### `npm start`
 
-For production mode
+For production mode.
 
-### `npm run test`
+### `npm test`
 
 Run the test cases.
 
-## Learn More
-
-To learn Fastify, check out the [Fastify documentation](https://www.fastify.io/docs/latest/).
+[ci]: https://github.com/christianharke/emojo-lookup/actions/workflows/ci.yml
+[ci-badge]: https://github.com/christianharke/emojo-lookup/actions/workflows/ci.yml/badge.svg
+[mastodon]: https://joinmastodon.org/
+[release]: https://github.com/christianharke/emojo-lookup/actions/workflows/version.yml
+[release-badge]: https://github.com/christianharke/emojo-lookup/actions/workflows/version.yml/badge.svg
