@@ -1,0 +1,44 @@
+name: Create Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump_type:
+        type: choice
+        description: Version bump type
+        options:
+          - patch
+          - minor
+          - major
+
+jobs:
+
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Bump version
+        id: new_version
+        run: |
+          version=$(npm version ${{ github.event.inputs.bump_type }} --no-commit-hooks --no-git-tag-version)
+          echo "tag=${version}" >> $GITHUB_OUTPUT
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        id: commit
+        with:
+          commit_author: Christian Harke <christian@harke.ch>
+          commit_message: "[RELEASE] ${{ steps.new_version.outputs.tag }}"
+
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.new_version.outputs.tag }}
