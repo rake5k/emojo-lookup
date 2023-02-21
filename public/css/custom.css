@@ -11,6 +11,9 @@ div.container {
 
 div.result-item {
   line-height: 2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 img.emojo {
