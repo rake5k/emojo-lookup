@@ -13,15 +13,15 @@ const testUrl = async (url) => {
   same(actual, HttpClientMock.resultStub);
 };
 
-test('urls without protocol should be supported', async (t) => {
+test('urls without protocol should be supported', async () => {
   await testUrl('mymastodon.com');
 });
 
-test('http urls should be supported', async (t) => {
+test('http urls should be supported', async () => {
   await testUrl('http://mymastodon.com');
 });
 
-test('https urls should be supported', async (t) => {
+test('https urls should be supported', async () => {
   await testUrl('https://mymastodon.com');
 });
 

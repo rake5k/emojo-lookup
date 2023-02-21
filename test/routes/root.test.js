@@ -1,6 +1,6 @@
 'use strict';
 
-const { test, todo } = require('tap');
+const { test } = require('tap');
 
 const { build } = require('../helper');
 const { Instance } = require('../mocks/repositories/emojos');

@@ -9,6 +9,8 @@
   "scripts": {
     "dev": "fastify start -w -l info -P app.js",
     "format": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "start": "fastify start -l info app.js",
     "test": "tap \"test/**/*.test.js\""
   },
@@ -28,6 +30,7 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
+    "eslint": "^8.34.0",
     "fetch-mock": "npm:@gr2m/fetch-mock@9.11.0-pull-request-644.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.2",
@@ -44,7 +47,8 @@
   },
   "lint-staged": {
     "./**/*.{js,json,css,md}": [
-      "prettier --write"
+      "prettier --write",
+      "eslint --fix"
     ]
   }
 }
