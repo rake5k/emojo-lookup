@@ -17,10 +17,10 @@ For production mode.
 
 ### `npm test`
 
-Run the test cases.
+Runs the test cases.
 
 [ci]: https://github.com/christianharke/emojo-lookup/actions/workflows/ci.yml
 [ci-badge]: https://github.com/christianharke/emojo-lookup/actions/workflows/ci.yml/badge.svg
 [mastodon]: https://joinmastodon.org/
-[release]: https://github.com/christianharke/emojo-lookup/actions/workflows/version.yml
-[release-badge]: https://github.com/christianharke/emojo-lookup/actions/workflows/version.yml/badge.svg
+[release]: https://github.com/christianharke/emojo-lookup/actions/workflows/release.yml
+[release-badge]: https://img.shields.io/github/v/release/christianharke/emojo-lookup?label=Release
