@@ -24,7 +24,7 @@
     "@fastify/view": "^8.2.0",
     "ejs": "^3.1.9",
     "fastify": "^4.24.3",
-    "fastify-cli": "^5.8.0",
+    "fastify-cli": "^5.9.0",
     "fastify-plugin": "^4.5.1",
     "milligram": "^1.4.1",
     "normalize.css": "^8.0.1"
