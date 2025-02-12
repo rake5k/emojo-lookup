@@ -30,7 +30,7 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "eslint": "^9.20.0",
+    "eslint": "^9.20.1",
     "fetch-mock": "npm:@gr2m/fetch-mock@9.11.0-pull-request-644.1",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
