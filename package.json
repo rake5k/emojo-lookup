@@ -33,7 +33,7 @@
     "eslint": "^9.32.0",
     "fetch-mock": "npm:@gr2m/fetch-mock@9.11.0-pull-request-644.1",
     "husky": "^9.1.7",
-    "lint-staged": "^16.1.4",
+    "lint-staged": "^16.1.5",
     "prettier": "^3.6.2",
     "tap": "^21.1.0"
   },
