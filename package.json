@@ -35,7 +35,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^17.2.0",
     "prettier": "^3.9.6",
-    "tap": "^21.7.4"
+    "tap": "^21.7.5"
   },
   "tap": {
     "check-coverage": false
